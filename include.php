@@ -1,4 +1,5 @@
 <?php
-    include('./nav.php');
+    include('./navT.php');
 ?>
+
 <link rel="stylesheet" type="text/css" href='./CSS/style.css'>
