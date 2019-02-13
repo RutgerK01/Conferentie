@@ -1,12 +1,80 @@
-#navI{
-    color: white;
-}
-
 #nav{
     background-color: black;
 }
 
+#top:link{
+    padding-top: 20px;
+    color: darkgray;
+}
+
+#top:visited{
+    padding-top: 20px;
+    color: darkgray;
+}
+
+#top:hover{
+    padding-top: 15px;
+    color: white;
+}
+
+
+#top:active{
+    padding-top: 20px;
+    color: darkgray;
+}
+
+body{
+    font-family: 'Mukta', sans-serif;
+}
+
+#text{
+    text-align: end;
+}
+
 #img{
     padding-top: 5px;
+    padding-right: 650px;
+    padding-left: 10px;
     padding-bottom: 5px;
 }
+
+#login{
+    padding-top: 80px;
+}
+
+#Lform{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#center{
+    text-align: center;
+    padding-top: 15px;
+}
+
+#reg{
+    text-align: center;
+    padding-top: 80px;
+}
+
+#aform:link{
+    padding-top: 20px;
+    color: gray;
+}
+
+#aform:visited{
+    padding-top: 20px;
+    color: darkslategray;
+}
+
+#aform:hover{
+    padding-top: 15px;
+    color: gray;
+}
+
+
+#aform:active{
+    padding-top: 20px;
+    color: gray;
+}
+

@@ -1,16 +1,27 @@
     <div class="row sticky-top" id="nav">
-        <div class="col-1"></div>
-        <div class="col-2">
+        <!-- <div class="col-1"></div> -->
+        <div class="col-11">
+        <ul class="nav nav-pills">
             <img id="img" src="./images/logo.png">
-            <ul class="nav nav-pills">
-        <a class="nav-link" id="navI" href="./Loginform.php">
-          Login
-        </a>
-        <a class="nav-link" id="navI" href="./registerform.php">
-          Register
-        </a>
-    </ul>
+                <a id="top" class="nav-link" id="navI" href="./index.php">
+                    Home
+                </a>
+                <a id="top" class="nav-link" id="navI" href="./about.php">
+                    About
+                </a>
+                <a id="top" class="nav-link" id="navI" href="./contact.php">
+                    Contact
+                </a>
+                <a id="top" class="nav-link" id="navI" href="./programme.php">
+                    Programme
+                </a>
+                <a id="top" class="nav-link" id="navI" href="./loginform.php">
+                    Login
+                </a>
+                <a id="top" class="nav-link" id="navI" href="./registerform.php">
+                    Register
+                </a>
+            </ul>
         </div>
-        <div class="col-8"></div>
         <div class="col-1"></div>
     </div>
