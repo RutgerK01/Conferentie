@@ -20,8 +20,8 @@
     <div class="col-10">
       <div class="row">
         <div class="col-6" id="Lform">
-          <h4 id="center">Nog niet geregistreerd</h4>
-            <h6 id="reg">Als je nog geen acount hebt klik dan <a id="aform" href="./registerform.php"> hier</a> om er een aan temaken</h6>
+          <h4 id="center">Not registered yet?</h4>
+            <h6 id="reg">Then <a id="aform" href="./registerform.php?action=User">Click here</a> To create a account</h6>
         </div>
         <div class="col-6" id="Lform">
           <h4 id="center">Inloggen:</h4>
