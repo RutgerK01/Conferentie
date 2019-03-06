@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -21,7 +21,7 @@
       <div class="row">
         <div class="col-6" id="Lform">
           <h4 id="center">Not registered yet?</h4>
-            <h6 id="reg">Then <a id="aform" href="./registerform.php?action=User">Click here</a> To create a account</h6>
+            <h6 id="reg">Then <a id="aform" href="./registerform.php?action=user">Click here</a> To create a account</h6>
         </div>
         <div class="col-6" id="Lform">
           <h4 id="center">Inloggen:</h4>
@@ -39,7 +39,7 @@
                 <label for="WWS">Wachtwoord</label>
                 <input type="password" name="ww" class="form-control" id="WWS" placeholder="Wachtwoord invoeren">
               </div>
-              <button  type="submit" class="btn btn-dark">Login</button>
+              <button type="submit" class="btn btn-dark">Login</button>
             </form>
           </div>
         

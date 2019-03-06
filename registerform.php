@@ -11,11 +11,85 @@
 
     <title>Conferentie</title>
 
-    <?php include('./include.php')?>
+    <?php include('./include.php');
+       $een = false;
+       $twee = false;
+
+       $user = false;
+
+       if(isset($_GET["action"])){
+        if($_GET["action"] == "speaker"){
+          $een = true;
+        }
+        if($_GET["action"] == "user"){
+          $twee = true;
+        }
+      }
+
+        $user = '';
+
+        if($een){
+          $user='speaker';
+        }
+        if($twee){
+          $user='<form action="./register.php" method="post">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Repeat email</label>
+              <input name="Reamil" type="email" class="form-control" id="inputPassword4" placeholder="Repeat email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputAddress">Firstname</label>
+              <input name="Fname" type="text" class="form-control" id="inputAddress" placeholder="Firstname">
+            </div>
+          <div class="form-group col-md-4">
+            <label for="inputAddress">Insertion</label>
+            <input name="In" type="text" class="form-control" id="inputAddress" placeholder="Insertion">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputAddress">Lastname</label>
+            <input name="Lname" type="text" class="form-control" id="inputAddress" placeholder="Lastname">
+          </div>  
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Password</label>
+              <input name="ww" type="password" class="form-control" id="inputEmail4" placeholder="Password">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Repeat password</label>
+              <input name="Rww" type="password" class="form-control" id="inputPassword4" placeholder="Repeat Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Accept <a id="aform" href="?">Terms and Conditions</a> and <a id="aform" href="?">Privacy Statement</a>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>';
+        }
+    ?>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    
+    <center><h1>Register as <?php if($een){echo'Speaker';}else{echo'User';}?></h1></center>
+
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <?php echo($user)?>
+      </div>
+      <div class="col-2"></div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
