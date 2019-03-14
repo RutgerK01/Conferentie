@@ -15,6 +15,7 @@
   </head>
   <body>
     <h1>Hello, world!</h1>
+    <?php echo($Sid . '<br>' . $Sname . '<br>' . $Semail . '<br>' . $Rrights . '<br>');?>
     
 
     <!-- Optional JavaScript -->

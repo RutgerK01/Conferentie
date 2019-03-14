@@ -1,3 +1,12 @@
+#wrong{
+    color: red;
+}
+
+#red{
+    border: 1.5px red solid;
+    color: red;
+}
+
 #nav{
     background-color: black;
 }

@@ -15,14 +15,56 @@
        $een = false;
        $twee = false;
 
-       $user = false;
+       $wrong = false;
+       $mail = false;
+       $ww = false;
+       $ACPT = false;
 
        if(isset($_GET["action"])){
         if($_GET["action"] == "speaker"){
           $een = true;
+          $action = 'speaker';
         }
+
         if($_GET["action"] == "user"){
           $twee = true;
+          $action = 'user';
+        }
+
+        if($_GET["action"] == "userACPT"){
+          $twee = true;
+          $action = 'user';
+          $ACPT = '<center><h1 id="wrong">You didnt accept the erms and Conditions and Privacy Statement</h1></center>';
+        }
+
+        if($_GET["action"] == "userMail"){
+          $twee = true;
+          $action = 'user';
+          $mail = '<center><h1 id="wrong">Emails did not match</h1></center>';
+        }
+
+        if($_GET["action"] == "userMailE"){
+          $twee = true;
+          $action = 'user';
+          $mail = '<center><h1 id="wrong">One of the email field was left empty</h1></center>';
+        }
+
+        if($_GET["action"] == "userWW"){
+          $twee = true;
+          $action = 'user';
+          $ww = '<center><h1 id="wrong">Passwords did not match</h1></center>';
+        }
+
+        if($_GET["action"] == "userWWE"){
+          $twee = true;
+          $action = 'user';
+          $ww = '<center><h1 id="wrong">One of the password field was left empty</h1></center>';
+        }
+
+        if($_GET["action"] == "userWrong"){
+          $twee = true;
+          $wrong = '<center><h1 id="wrong">Email already exists</h1></center>';
+          $action = 'user';
         }
       }
 
@@ -32,7 +74,7 @@
           $user='speaker';
         }
         if($twee){
-          $user='<form action="./register.php" method="post">
+          $user='<form action="./register.php?action=' . $action . '" method="post">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Email</label>
@@ -40,7 +82,7 @@
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">Repeat email</label>
-              <input name="Reamil" type="email" class="form-control" id="inputPassword4" placeholder="Repeat email">
+              <input name="Remail" type="email" class="form-control" id="inputPassword4" placeholder="Repeat email">
             </div>
           </div>
           <div class="form-row">
@@ -69,7 +111,7 @@
           </div>
           <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <input value="ja" name="accpt" class="form-check-input" type="checkbox" id="gridCheck">
               <label class="form-check-label" for="gridCheck">
                 Accept <a id="aform" href="?">Terms and Conditions</a> and <a id="aform" href="?">Privacy Statement</a>
               </label>
@@ -81,6 +123,7 @@
     ?>
   </head>
   <body>
+    <?php echo($mail . $ww . $wrong . $ACPT) ?>
     <center><h1>Register as <?php if($een){echo'Speaker';}else{echo'User';}?></h1></center>
 
     <div class="row">

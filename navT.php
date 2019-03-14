@@ -15,12 +15,12 @@
                 <a id="top" class="nav-link" id="navI" href="./programme.php">
                     Programme
                 </a>
-                <a id="top" class="nav-link" id="navI" href="./loginform.php">
-                    Login
-                </a>
-                <a id="top" class="nav-link" id="navI" href="./registerform.php">
-                    Register
-                </a>
+                <?php if(!isset($_SESSION['id'])){
+                        echo('<a id="top" class="nav-link" id="navI" href="./loginform.php">Login</a>
+                              <a id="top" class="nav-link" id="navI" href="./registerform.php">Register</a>');}
+                      if(isset($_SESSION['id'])){
+                        echo('<a id="top" class="nav-link" id="navI" href="./logout.php">Logout</a>');
+                }?>
             </ul>
         </div>
         <div class="col-1"></div>
