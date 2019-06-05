@@ -18,7 +18,59 @@ $Remail = $_POST['Remail'];
 $ww = $_POST['ww'];
 $Rww = $_POST['Rww'];
 $accpt = $_POST['accpt'];
+$day = $_POST['day'];
+$month = $_POST['month'];
+$year  = $_POST['year'];
+$lcode = $_POST['Lcode'];
+$phone = $_POST['phone'];
 
+if($action == 'speaker'){
+    $topic = $_POST['Topic'];
+    $resume = $_POST['Resume'];
+    $tijd = $_POST['days'];
+}
+
+if(isset($tijd)){
+    if($tijd == 'FriH'){
+        $dayd = 'hele vrijdag';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+    elseif($tijd == 'FriE'){
+        $dayd = 'vrijdag middag';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }    
+    elseif($tijd == 'FriA'){
+        $dayd = 'vrijdag avond';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+    elseif($tijd == 'SatH'){
+        $dayd = 'hele zaterdag';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+    elseif($tijd == 'SatM'){
+        $dayd = 'zaterdag ochtend';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+    elseif($tijd == 'SatE'){
+        $dayd = 'zaterdag middag';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+    elseif($tijd == 'SatA'){
+        $dayd = 'zaterdag avnond';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+    elseif($tijd == 'SunH'){
+        $dayd = 'hele zondag';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+    elseif($tijd == 'All'){
+        $dayd = 'maakt niet uit';
+        echo($topic . '<br>' . $resume . '<br>' . $dayd);
+    }
+}
+
+$phonenumber = ($lcode . ' ' . $phone);
+$birth = ($day . "/" . $month . "/" . $year);
 
 if(!empty($In)){
     $FullName = $Fname . " " . $In . " " . $Lname;
@@ -26,7 +78,8 @@ if(!empty($In)){
     $FullName = $Fname . " " . $Lname;
 }
 
-echo('name= ' . $FullName . '<br>' . 'Email= ' . $email . '<br>' . 'Remail= ' . $Remail . '<br>' . 'Pass= ' . $ww . '<br>' . 'Rww= ' . $Rww . '<br>' . 'Accepted= ' . $accpt . '<br>');
+echo('name= ' . $FullName . '<br>' . 'Email= ' . $email . '<br>' . 'Remail= ' . $Remail . '<br>' . 'Pass= ' . $ww . '<br>' . 'Rww= ' . $Rww . '<br>' . 'Accepted= ' . $accpt . '<br>' . 'birth= ' . $birth . '<br>' . $phonenumber . '<br>');
+
 
 if(empty($accpt)){
     if($action == 'speaker'){
@@ -70,16 +123,66 @@ if(empty($accpt)){
                                         `email`, 
                                         `password`, 
                                         `activated`, 
-                                        `rights`) 
+                                        `rights`,
+                                        `birth`,
+                                        `phone`) 
                                 VALUES ('{$FullName}',
                                         '{$mail}',
                                         AES_ENCRYPT('$pass', 'conf123'),
                                         'no',
-                                        'user')";
+                                        '{$action}',
+                                        '{$birth}',
+                                        '{$phonenumber}')";
+
+                                        $to = $mail;
+                                        $subject = 'Thanks for tegistering please activate your acount';
+                                        $message = '<html>
+                                                        <head>
+                                                            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                                                            <title></title>
+                                                        </head>
+                                                        <body>
+                                                          <p>Hi,</p><br>
+                                                            <p>Thank you.</p><br>
+                                                            <p>There is one more thing to do:</p>
+                                                          <p><a href="./index.php">Click here</a> to activate your account</p>
+                                                        </body>
+                                                    </html>';
+
+                                        $from = "Conference@mail.com";
+                                        //$Bcc = "example@example.com";
+
+                                        // To send HTML mail, the Content-type header must be set
+                                        $headers  = 'MIME-Version: 1.0' . "\r\n";
+                                        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                                        // Additional headers
+                                        $headers .= 'To: ' .$to. "\r\n";
+                                        $headers .= 'From: ' .$from. "\r\n";
+                                        //  $headers .= 'Bcc: '.$Bcc. "\r\n";
+
+                                        mail($to,$subject,$message,$headers);
                             if ($conn->query($sql) === TRUE) {
                             echo "New record created successfully";
-                            header("location: ./index.php");
-                            ob_end_flush();
+                                if($action == 'user'){
+                                    header("location: ./index.php");
+                                    ob_end_flush();}
+                                else{$sql= "INSERT INTO  `shows`(
+                                                        `topic`,
+                                                        `resume`,
+                                                        `beschikbaar`,
+                                                        `email`)
+                                                VALUES  ('{$topic}',
+                                                         '{$resume}',
+                                                         '{$dayd}',
+                                                         '{$mail}')";
+
+                                
+                                }if ($conn->query($sql) === TRUE) {
+                                    echo "New record created successfully";
+                                            header("location: ./index.php");
+                                            ob_end_flush();
+                                }
                             } else {
                             echo "Error: " . $sql . "<br>" . $conn->error;
                             }

@@ -13,3 +13,5 @@
         $Semail   = $_SESSION['email'];
         $Rrights  = $_SESSION['rights'];
     }?>
+
+<script src="./Java/Java.js"></script>

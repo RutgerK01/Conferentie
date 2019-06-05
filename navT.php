@@ -13,11 +13,11 @@
                     Contact
                 </a>
                 <a id="top" class="nav-link" id="navI" href="./programme.php">
-                    Programme
+                    Program
                 </a>
                 <?php if(!isset($_SESSION['id'])){
                         echo('<a id="top" class="nav-link" id="navI" href="./loginform.php">Login</a>
-                              <a id="top" class="nav-link" id="navI" href="./registerform.php">Register</a>');}
+                              <a id="top" class="nav-link" id="navI" href="./registerform.php?action=user">Register</a>');}
                       if(isset($_SESSION['id'])){
                         echo('<a id="top" class="nav-link" id="navI" href="./logout.php">Logout</a>');
                 }?>

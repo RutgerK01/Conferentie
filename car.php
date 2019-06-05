@@ -13,7 +13,7 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <a href="./about.php">
+        <a href="./tickets.php">
         <?php if($full){echo('<img src="./images/Banner1.2.png" class="d-block w-100" alt="...">');} 
               else{echo('<img src="./images/Banner1.png" class="d-block w-100" alt="...">');}?> </a>
     </div>

@@ -1,10 +1,207 @@
+#Information{
+    background-color: lightgray;
+    height: 27rem;
+    mar
+}
+
+#shopping{
+    border: black 2px solid;
+    height: 150px;
+}
+
+#conf{
+    margin-left: 180px;
+}
+
+#as{
+    margin-left: 10px;
+}
+
+#bottom{
+    margin-top: 15px;
+}
+
+#about{
+    height: 300px;
+    width: 1500px;
+    background-color: aqua;
+    border: #424242 4px solid;
+    border-radius: 20px;
+
+    margin-top: 0px;
+    margin-left: 20px;
+
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+#ticketCol{
+    border: black 2px solid;
+    border-radius: 10px;
+    height: 560px;
+}
+
+#next{
+    margin-left: 1410px;
+}
+
+#nextBtn{
+    border: black 1px solid;
+}
+
+#hr{
+    border: black 1.5px solid;
+}
+
 #wrong{
     color: red;
+}
+
+#ticketPage{
+    border: 2px #424242 solid;
+    border-radius: 10px;
+    background-color: #808080;
+
+    height: 420px;
+
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #red{
     border: 1.5px red solid;
     color: red;
+}
+
+#col{
+    margin-left: 40px;
+    height: 125px;
+    border-left: black 3px solid;
+}
+
+#col4{
+    margin-left: 40px;
+    height: 125px;
+    border-left: black 3px solid;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+
+#colN{
+    margin-left: 40px;
+    height: 125px;
+    border-left: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+#cole{
+    height: 125px;
+    border-right: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+#cole1{
+    height: 125px;
+    border-right: black 3px solid;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+#cole1N{
+    height: 125px;
+    border-right: black 3px solid;
+    border-bottom: black 3px solid;
+    border-bottom-right-radius: 10px;
+}
+
+#coleN{
+    height: 125px;
+    border-right: black 3px solid;
+}
+
+#col1{
+    margin-left: 40px;
+    height: 50px;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+    border-left: black 3px solid;
+    border-top-left-radius: 10px;
+}
+
+#col3{
+    height: 50px;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+    border-right: black 3px solid;
+    border-top-right-radius: 10px;
+}
+
+#col2{
+    margin-left: 40px;
+    height: 125px;
+    border-bottom: black 3px solid;
+    border-left: black 3px solid;
+    border-bottom-left-radius: 10px;
+}
+
+#ticket{
+    height: 50px;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+    border-left: black 3px solid;
+    border-right: black 3px solid;
+}
+
+#ticketN{
+    height: 50px;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+#ticket1{
+    height: 125px;
+    border-left: black 3px solid;
+    border-right: black 3px solid;
+}
+
+#ticket4{
+    height: 125px;
+    border-left: black 3px solid;
+    border-right: black 3px solid;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+#ticket4N{
+    height: 125px;
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+#ticket3{
+    height: 125px;
+    border-left: black 3px solid;
+    border-right: black 3px solid;
+    border-bottom: black 3px solid;
+}
+
+#ticket3N{
+    height: 125px;
+    border-bottom: black 3px solid;
+}
+
+#ticket2{
+    height: 125px;
+    border: black 3px solid;
+}
+
+#pageN{
+    border: 2px solid rgb(15, 15, 15);
+    background: gray; 
+    text-align: center;
+    color: #424242;
 }
 
 #nav{
@@ -38,6 +235,10 @@ body{
 
 #text{
     text-align: end;
+}
+
+#infor{
+    margin-left: 20px;
 }
 
 #img{

@@ -37,6 +37,16 @@
         $_SESSION['email']  = $email;
         $_SESSION['rights'] = $rights;
 
+        if($rights == "speaker"){
+            $speak = "SELECT `id` FROM `shows` WHERE `email` = '{$email}'";
+            $result = $conn->query($speak);
+            $row1 = $result->fetch_assoc();
+
+            $ids = $row1['id'];
+
+            $_SESSION['ids'] = $ids;
+        }    
+
         header('location: ./index.php');
     }else{
         if($action == 'speaker'){

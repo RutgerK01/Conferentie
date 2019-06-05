@@ -11,14 +11,17 @@
 
     <title>Conferentie</title>
 
-    <?php include('./include.php')?>
+    <?php include('./include.php');?>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1 id="pageN">Home</h1>
     <?php
       if(isset($_SESSION['id'])){echo($Sid . '<br>' . $Sname . '<br>' . $Semail . '<br>' . $Rrights . '<br>');};
       include('./car.php')
     ?>
+
+
+          
     
 
     <!-- Optional JavaScript -->
