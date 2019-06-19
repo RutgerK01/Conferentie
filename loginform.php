@@ -19,7 +19,7 @@
           if($_GET["action"] == "userWW"){
             $twee = true;
             $action = 'user';
-            $ww = '<center><h6 id="wrong">The email or Password wasnt right</h6></center>';
+            $ww = '<center><h6 id="wrong">The email or password was not right</h6></center>';
           }
         }
     ?>
@@ -33,21 +33,21 @@
       <div class="row">
         <div class="col-6" id="Lform">
           <h4 id="center">Not registered yet?</h4>
-            <h6 id="reg">Then <a id="aform" href="./registerform.php?action=user">Click here</a> To create a account</h6>
+            <h6 id="reg">Then <a id="aform" href="./registerform.php?action=user">Click here</a> To create an account</h6>
         </div>
         <div class="col-6" id="Lform">
-          <h4 id="center">Inloggen:</h4>
+          <h4 id="center">Login:</h4>
           <?php echo($ww); ?>
             <form action="./login.php" method="post">
               <div class="form-group">
-                <label for="exampleInputEmail1" <?php if($twee){echo'id="wrong"';}?>>Email adres</label>
+                <label for="exampleInputEmail1" <?php if($twee){echo'id="wrong"';}?>>Email adress</label>
                 <input type="email" name="email" class="form-control" id="<?php if($twee){echo'red';}
                                                                                 else{echo' ';} ?>" 
                        aria-describedby="emailHelp" placeholder="Email invoeren">
-                <small id="emailHelp" class="form-text text-muted">We will never share your eamil</small>
+                <small id="emailHelp" class="form-text text-muted">We will never share your email</small>
               </div>
               <div class="form-group">
-                <label for="WWS" <?php if($twee){echo'id="wrong"';}?>>Wachtwoord</label>
+                <label for="WWS" <?php if($twee){echo'id="wrong"';}?>>Password</label>
                 <input type="password" name="ww" class="form-control" id="<?php if($twee){echo'red';}
                                                                                 else{echo' ';} ?>" placeholder="Wachtwoord invoeren">
               </div>
